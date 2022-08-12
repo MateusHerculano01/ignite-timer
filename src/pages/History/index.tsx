@@ -15,16 +15,34 @@ export function History() {
               <th>Status</th>
             </tr>
           </thead>
-          <tbody></tbody>
-          <tr>
-            <td>Tarefa</td>
-            <td>20 minutos</td>
-            <td>Há 2 meses</td>
-            <td>Concluído</td>
-          </tr>
-        </tbody>
-      </table>
-    </HistoryList>
-    </HistoryContainer >
+          <tbody>
+            <tr>
+              <td>Tarefa</td>
+              <td>20 minutos</td>
+              <td>Há 2 meses</td>
+              <td>Concluído</td>
+            </tr>
+            <tr>
+              <td>Tarefa</td>
+              <td>20 minutos</td>
+              <td>Há 2 meses</td>
+              <td>Concluído</td>
+            </tr>
+            <tr>
+              <td>Tarefa</td>
+              <td>20 minutos</td>
+              <td>Há 2 meses</td>
+              <td>Concluído</td>
+            </tr>
+            <tr>
+              <td>Tarefa</td>
+              <td>20 minutos</td>
+              <td>Há 2 meses</td>
+              <td>Concluído</td>
+            </tr>
+          </tbody>
+        </table>
+      </HistoryList>
+    </HistoryContainer>
   )
 }
