@@ -32,6 +32,7 @@ interface Cycle {
   minutesAmount: number
   startDate: Date
   interruptedDate?: Date
+  finishedDate?: Date
 }
 
 export function Home() {
@@ -65,8 +66,8 @@ export function Home() {
   }
 
   function handleInterruptCycle() {
-    setCycles(
-      cycles.map((cycle) => {
+    setCycles((state) =>
+      state.map((cycle) => {
         if (cycle.id === activeCycleId) {
           return { ...cycle, interruptedDate: new Date() }
         } else {
@@ -75,6 +76,8 @@ export function Home() {
       }),
     )
     setActiveCycleId(null)
+
+    document.title = 'Ignite Timer'
   }
 
   const activeCycle = cycles.find((cycle) => cycle.id === activeCycleId)
@@ -96,16 +99,33 @@ export function Home() {
 
     if (activeCycle) {
       interval = setInterval(() => {
-        setAmmountSecondsPassed(
-          differenceInSeconds(new Date(), activeCycle.startDate),
+        const secondsDifference = differenceInSeconds(
+          new Date(),
+          activeCycle.startDate,
         )
+
+        if (secondsDifference >= totalSeconds) {
+          setCycles((state) =>
+            state.map((cycle) => {
+              if (cycle.id === activeCycleId) {
+                return { ...cycle, finishedDate: new Date() }
+              } else {
+                return cycle
+              }
+            }),
+          )
+          setAmmountSecondsPassed(totalSeconds)
+          clearInterval(interval)
+        } else {
+          setAmmountSecondsPassed(secondsDifference)
+        }
       }, 1000)
     }
 
     return () => {
       clearInterval(interval)
     }
-  }, [activeCycle])
+  }, [activeCycle, totalSeconds, activeCycleId])
 
   useEffect(() => {
     if (activeCycle) {
