@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { ThemeProvider } from 'styled-components'
 
 import { GlobalStyle } from './styles/global'
@@ -13,4 +12,3 @@ export function App() {
     </ThemeProvider>
   )
 }
-
