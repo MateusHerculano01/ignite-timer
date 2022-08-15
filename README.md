@@ -1,6 +1,6 @@
 ## 💻 Projeto
 
-Ignite Timer, projeto desenvolvido na trilha de React no ignite da Rocketseat. Trata-se de um timer onde é possível adicionar as suas tarefas do dia a dia e cronometrá-las com tempo mínimo de 5 minutos e tempo máximo de 60 minutos, podendo interrompê-las e ver o histórico de suas tarefas.
+Ignite Timer ⏳, projeto desenvolvido na trilha de React no ignite da Rocketseat. Trata-se de um timer onde é possível adicionar as suas tarefas do dia a dia e cronometrá-las com tempo mínimo de 5 minutos e tempo máximo de 60 minutos, podendo interrompê-las e ver o histórico de suas tarefas.
 
 ![Projeto finance](/assets/ignitetimer1.png)
 ![Projeto finance](/assets/ignitetimer2.png)
